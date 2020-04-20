@@ -1,3 +1,7 @@
+video {
+  -webkit-transform: scaleX(-1) !important;
+  transform: scaleX(-1) !important;
+}
 @media (prefers-color-scheme: dark) {
   /*
    * Dark Colors
