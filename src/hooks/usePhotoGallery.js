@@ -47,7 +47,37 @@ export function usePhotoGallery() {
         .shadowRoot.querySelector("pwa-camera")
         .shadowRoot.querySelector(".camera-wrapper .camera-video video");
       video.style.transform = null;
-    }, 100);
+
+      const takePhotoButton = document
+        .querySelector("pwa-camera-modal-instance")
+        .shadowRoot.querySelector("pwa-camera")
+        .shadowRoot.querySelector(".camera-wrapper .camera-footer .shutter");
+      console.log("el take", takePhotoButton);
+      takePhotoButton.addEventListener("click", () => {
+        console.log("tomo foto");
+        setTimeout(() => {
+          const cancelButton = document
+            .querySelector("pwa-camera-modal-instance")
+            .shadowRoot.querySelector("pwa-camera")
+            .shadowRoot.querySelector(
+              ".camera-wrapper .camera-footer .items .accept-cancel"
+            );
+          console.log("el cancelar", cancelButton);
+          cancelButton.addEventListener("click", () => {
+            console.log("cancelo");
+            setTimeout(() => {
+              const video = document
+                .querySelector("pwa-camera-modal-instance")
+                .shadowRoot.querySelector("pwa-camera")
+                .shadowRoot.querySelector(
+                  ".camera-wrapper .camera-video video"
+                );
+              video.style.transform = null;
+            }, 500);
+          });
+        }, 500);
+      });
+    }, 500);
     const cameraPhoto = await getPhoto({
       resultType: CameraResultType.Uri,
       source: CameraSource.Camera,
