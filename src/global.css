@@ -1,6 +1,6 @@
 video {
-  -webkit-transform: scaleX(-1) !important;
-  transform: scaleX(-1) !important;
+  -webkit-transform: null !important;
+  transform: null !important;
 }
 @media (prefers-color-scheme: dark) {
   /*
