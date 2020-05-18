@@ -46,7 +46,7 @@ const Tab2 = () => {
         </IonToolbar>
       </IonHeader>
       <IonContent>
-        <button>pepe</button>
+        <button>Senor don pepe</button>
         <IonHeader collapse="condense">
           <IonToolbar>
             <IonTitle size="large">Photo Gallery</IonTitle>
